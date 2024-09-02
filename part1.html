@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一章: 初识C语言</title>
+    <style>
+        body {
+        font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #333;
+            background-color: #f5f5f7;
+            margin: 0;
+            padding: 0;
+        }
+        .whole-page {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        #title {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 2.3em;
+            line-height: 0.75;
+            font-weight: normal;
+        }
+        .introduction {
+            display: flex;
+            align-items: center;
+        }
+        p {
+            font-family: sans-serif;
+            font-size: medium;
+        }
+        hr {
+            border: 0.065em solid;
+            color: #9b9b9b;
+        }
+        .code-example-one {
+            display: block;
+            margin-top: 15px;
+            padding-bottom: 15px;
+            background-color: #ececec;
+            border-radius: 6px;
+        }
+        .code-example-two {
+            display: block;
+            margin-top: 15px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            background-color: #ececec;
+            border-radius: 4px;
+        }
+        .code-one{
+            margin: 0 15px 0 15px;
+            border-left: 4px solid rgb(255, 255, 100);
+            padding-left: 10px;
+            line-height: 22px;
+            background-color: white;
+        }
+        .second-line {
+            padding-left: 25px;
+        }
+        .highlight {
+           color: green; 
+            text-decoration: underline; 
+            text-decoration-color: green;
+        }
+        .explanation-code {
+            color: green;
+            background-color: #efefef;
+            padding: 3px;
+        }
+        table {
+            margin-top: 30px;
+            margin-left: 90px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid black; /* 实线分隔符 */
+            padding: 8px; /* 内边距 */
+            text-align: center;
+            color: #003366;
+        }
+        th {
+            color: rgb(87, 55, 192);
+            font-weight: bold;
+        }
+        .after-main {
+            display: inline-block;
+            padding-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="whole-page">
+        <h1 id="title">第一章: 初识C语言</h1>
+        <hr>
+        <div class="introduction">
+            <img src="All.png" alt="C图片" style="width: 18%;">
+            <p>C语言是一种通用的、结构化的编程语言，诞生于20世纪70年代初，由丹尼斯·里奇在贝尔实验室开发。C语言设计简洁、功能强大，并且能高效地与硬件进行交互，因此被广泛应用于操作系统、嵌入式系统、编译器和各类应用软件的开发。<br><br>尝试C最简单的方法是在浏览器中访问   
+            <a href="https://www.onlinegdb.com" target="_blank">https://www.onlinegdb.com</a>。在那里，我们遵行下列步骤就可以完成第一个入门的程序。
+            </p>
+        </div>
+        <p style="margin-top: 25px;">1.删除编辑区中的任何代码，然后输入：</p>
+        <div class="code-example-one">
+            <h3 style="color: black; font-size: larger; padding: 20px 15px; margin: 0;">例子</h3>
+            <div class="code-one">
+                #include &lt;stdio.h&gt;
+                <div style="display: block; padding-top: 8px;">
+                    int <span style="color: #05a;">main</span>() {
+                </div>
+                <span class="second-line">printf</span>(<span style="color: brown;">"Hello, world!"
+                </span>);<br>
+                <span class="second-line" style="color: green;">return</span> <span style="color: rgb(230, 42, 42);">0</span>;
+                <br>}
+            </span>
+            </div>
+        </div>
+        <br><br>
+        <div>
+            2.单击<span class="highlight"><u>绿色的run按钮</u></span>, 这样应该就能看到Hello, world!显示在网页底部。恭喜你，刚刚成功运行了第一个C程序!<br><br>
+            3.也可以尝试单击{}Beauty按钮，它将自动格式化你的代码。<i>(其实就是美观点)</i>
+        </div><br>
+        <p>让我们来简单地解释上面的代码。</p>
+        <br>
+        <div class="explanation">
+            <span class="explanation-code">#include &lt;stdio.h&gt;</span>: 这一行代码是一个预处理指令，用来包含标准输入输出库的头文件<span class="explanation-code">stdio.h</span>。这个头文件中包含了我们要使用的输入输出函数，比如<span class="explanation-code">printf</span>函数。通过包含这个头文件，我们就可以在程序中使用这些函数了。<br><br><span class="explanation-code">int main() {</span>: 这行代码定义了程序的主函数<span class="explanation-code">main</span>。在C语言中，程序的执行是从<span class="explanation-code">main</span>函数开始的。<span class="explanation-code">int</span>表示这个函数会返回一个整数类型的值，通常是<span class="explanation-code">0或1</span>。<span class="explanation-code">main</span>函数的花括号 <span class="explanation-code">{}</span>表示函数体的开始和结束。
+            <br><br>
+            <span class="explanation-code">printf("Hello, world!");</span>: 这一行代码使用了<span class="explanation-code">printf</span>函数来向屏幕打印输出<span class="explanation-code">"Hello, world!"</span>这段文字。<span class="explanation-code">printf</span>是一个标准库函数，用于格式化输出。这里的<span class="explanation-code">"Hello, world!"</span>是一个字符串常量，会被直接输出到终端窗口。
+            <br><br>
+            <span class="explanation-code">return 0;</span>: 这一行代码表示<span class="explanation-code">main</span>函数的返回值是<span class="explanation-code">0</span>。在C语言中，<span class="explanation-code">return 0;</span>通常表示程序成功结束。如果你在命令行或其他环境中运行这个程序，返回<span class="explanation-code">0</span>代表程序已经正常运行完毕，没有错误。
+        </div>
+        <br><hr>
+        <h2>常见的C文件布局</h2>
+        <div class="code-example-two">
+            <div class="code-one">
+                #include &lt;stdio.h&gt;
+                <div style="display: block; padding-top: 8px;">
+                    int <span style="color: #05a;">main</span>() {
+                </div><br>
+                <span class="second-line" style="color: green;">return</span> <span style="color: rgb(230, 42, 42);">0</span>;
+                <br>}
+            </div>
+        </div>
+        <p>
+            我们新手在每次写程序前，可以先将此布局默下来，当然，默不下来也不要紧，随着练习次数的增加，自然而然就记下来啦。   
+        </p>
+        <hr>
+        <h2>实践出真知</h2>
+        我们可以通过可以破坏我们的程序来了解C程序必须遵循的原则。“Hello，world!”程序为例，试着进行以下的更改之一，然后编译运行它。看看会发生什么!<br>
+        <table>
+            <thead>
+                <tr>
+                    <th>如果你这样做...</th>
+                    <th>...它会失败, 因为...</th>
+                </tr>
+            </thead>
+                <tr>
+                    <td><del>#include &lt;stdio.h&gt;</td>
+                    <td>在没有包含<span class="explanation-code">stdio.h</span>头文件的情况下，编译器无法识别   <span class="explanation-code">printf</span>函数</td>
+                </tr>
+                <tr>
+                    <td>重命名<span class="explanation-code">main</span>函数，如: <span>func</span></td>
+                    <td>编译器找不到程序的入口</td>
+                </tr>
+                <tr>
+                    <td>缺少分号 ;</td>
+                    <td><span class="explanation-code">;</span>是C语句结束的标志，缺少它编译器将无法正确识别语句的结束</td>
+                </tr>
+                <tr>
+                    <td>缺少花括号<span class="explanation-code">{}</span></td>
+                    <td>编译器无法确定代码块的开始和结束</td>
+                </tr>
+        </table>
+        <br><hr>
+        <h2>准备代码编辑软件</h2>
+        <p>
+        虽然在线的代码编辑网站很方便，但是它的功能和个性化还是有一定的限制，学好编程语言还是得有一款本地好用的软件。
+        于是，我推荐大家下载Sublime Text。下载完后，我们就可以在Sublime Text中编写程序了，并在本地编译运行。
+        </p>
+        <hr>
+        <h2>简单的C程序</h2>
+        <div class="code-example-two">
+            <div class="code-one">
+                #include &lt;stdio.h&gt;
+                <div style="display: block; padding-top: 8px;">
+                    int <span style="color: #05a;">main</span>() {
+                </div>
+                <div class="after-main">
+                    <span style="color: green;">int</span> age;
+                    <br>
+                    age = <span style="color: green;">18</span>;
+                    <br><br>
+                    printf(<span style="color: brown;">"我是一名"</span>);
+                    <br>
+                    printf(<span style="color: brown;">"大学生\n"</span>);
+                    <br>
+                    printf(<span style="color: brown;">"我的岁数是%d\n"</span>, age);
+                    <br><br>
+                    <span style="color: green;">return</span> <span style="color: rgb(230, 42, 42);">0</span>;
+                </div>
+                <br>}
+            </div>
+
+        </div>
+        <div class="explanation">
+            <p>
+                光看代码也许并不知道打印的具体内容，所以，编译并运行该程序以查看结果吧。首先，用Sublime Text新建一个文件，并
+                以.c作为扩展名。例如: first.c
+                <br>
+                大家可以猜一下运行结果是什么。
+                <br><br>
+                如果一切正常运行，该程序的输出应该是：<br>
+                我是一名大学生<br>
+                我的岁数是18<br><br>
+                让我们来逐行分析上面的代码。<br>
+                <span class="explanation-code">int age;</span>: 声明了一个int(整型)的变量，名为age。<br>
+                <span>age = 18;</span>: 把数值18赋给变量age <br>
+                两个<span class="explanation-code">printf</span>之间是不会有空格或者换行的，要实现换行的功能，就要在
+                字符串中添加转义字符<span class="explanation-code">\n</span><br>
+                <span class="explanation-code">%d</span>: 当<span class="explanation-code">printf</span>遇到
+                <span class="explanation-code">%d</span>时，它会寻找后续参数中对应的整数值，并将其转换为字符串格式进行
+                输出。
+            </p>
+        </div>
+    </div>
+</body>
+</html>
